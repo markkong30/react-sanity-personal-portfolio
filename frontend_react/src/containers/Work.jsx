@@ -8,7 +8,7 @@ import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 const Work = () => {
     const [works, setWorks] = useState([]);
     const [filterWork, setFilterWork] = useState([]);
-    const [activeFilter, setActiveFilter] = useState('All');
+    const [activeFilter, setActiveFilter] = useState('Featured');
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
     useEffect(() => {
@@ -17,8 +17,10 @@ const Work = () => {
         client.fetch(query).then((data) => {
             console.log(data)
             const works = data.sort((a, b) => b.tags.length - a.tags.length)
+            const filtered = works.filter((work) => work.categories.includes('Featured'));
+
             setWorks(works);
-            setFilterWork(works);
+            setFilterWork(filtered);
         });
     }, []);
 

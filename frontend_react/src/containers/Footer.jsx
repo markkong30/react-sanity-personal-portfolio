@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import images from '../utils/images';
 import { AppWrap, MotionWrap } from '../wrapper';
 import { client } from '../client';
@@ -7,13 +8,22 @@ import { client } from '../client';
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isSubmitDisabled, setIsSubmitDiabled] = useState(true);
   const [loading, setLoading] = useState(false);
-
+  const form = useRef(null);
   const { username, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    const inputs = form.current.querySelectorAll('.input');
+    for (const input of [...inputs]) {
+      if (input.value.length == 0) {
+        return setIsSubmitDiabled(true)
+      }
+    }
+    return setIsSubmitDiabled(false);
   };
 
   const handleSubmit = () => {
@@ -49,23 +59,31 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
+        <div className="app__footer-form app__flex" ref={form}>
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+            <input className="p-text input" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} autoComplete='off' />
           </div>
           <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+            <input className="p-text input" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} autoComplete='off' />
           </div>
           <div>
             <textarea
-              className="p-text"
+              className="p-text input"
               placeholder="Your Message"
               value={message}
               name="message"
               onChange={handleChangeInput}
+              autoComplete='off'
             />
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+          {isSubmitDisabled ?
+            <button type="button" className="p-text disabled">Send Message</button>
+            :
+            <motion.button type="button" className="p-text" onClick={handleSubmit}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >{!loading ? 'Send Message' : 'Sending...'}</motion.button>
+          }
         </div>
       ) : (
         <div>
@@ -208,6 +226,10 @@ const StyledFooter = styled.div`
 
       &:hover {
         background-color: #2430af;
+      }
+
+      &.disabled {
+        cursor: not-allowed;
       }
     }
     

@@ -82,6 +82,10 @@ const StyledTestimonials = styled.div`
 	align-items: center;
 	padding: 0 10%;
 
+	@media (max-width: 768px) {
+		padding: 0 5%;
+	}
+
 	h2 {
       padding-bottom: 3rem;
 			color: var(--secondary-color);
@@ -143,6 +147,10 @@ const StyledTestimonials = styled.div`
 			@media screen and (min-width: 2000px) {
 				font-size: 2rem;
 				line-height: 3.5rem;
+			}
+
+			@media (max-width: 550px) {
+				font-size: 1rem;
 			}
 		}
 
