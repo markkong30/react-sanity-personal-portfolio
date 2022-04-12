@@ -7,19 +7,19 @@ import backgroundImg from '../assets/bgWhite.png'
 import { slideIn } from '../utils/animations';
 
 const Navbar = () => {
-    const navItems = ['home', 'about', 'work', 'skills', 'testimonials', 'contact'];
+    const navItems = ['home', 'about', 'work', 'skills', 'testimonial', 'contact'];
     const [toggle, setToggle] = useState(false);
 
     return (
         <StyledNav>
             <div className='logo'>
-                <img src={images.logo} alt="" />
+                <img src={images.mark} alt="" />
             </div>
             <ul className='nav'>
                 {navItems.map(item => (
                     <li key={`link-${item}`} className='app__flex p-text'>
                         <div className='gradient'></div>
-                        <a href={`/${item}`}>{item}</a>
+                        <a href={`#${item}`}>{item}</a>
                     </li>
                 ))}
             </ul>
@@ -71,7 +71,9 @@ const StyledNav = styled.nav`
 
         img {
             width: 90px;
-            height: 20px;
+            height: 30px;
+            filter: contrast(0.8);
+            transform: scale(1.2);
 
             @media (min-width: 2000px) {
                 width: 180px;

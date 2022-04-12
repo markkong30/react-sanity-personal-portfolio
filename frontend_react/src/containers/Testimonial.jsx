@@ -32,7 +32,7 @@ const Testimonial = () => {
 
 	return (
 		<StyledTestimonials>
-			<h2 className="head-text">Testimonials</h2>
+			<h2 className="head-text">Testimonial</h2>
 
 			{testimonials.length && (
 				<>

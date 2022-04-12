@@ -63,7 +63,11 @@ const Work = () => {
             >
 
                 {filterWork.map((work, index) => (
-                    <div className="app__work-item app__flex" key={index}>
+                    <motion.div className="app__work-item app__flex" key={index}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.8 }}
+                        onClick={() => window.open(work.projectLink, '_blank').focus()}
+                    >
                         <div className="app__work-img app__flex">
                             <img src={urlFor(work.imgUrl)} alt={work.title} />
                             <motion.div
@@ -112,7 +116,7 @@ const Work = () => {
 
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
 
             </motion.div>
