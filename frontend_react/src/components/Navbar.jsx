@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
         <StyledNav>
-            <div className='logo'>
+            <div className='logo' onClick={() => window.scrollTo({ top: 0, left: 0 })}>
                 <img src={images.mark} alt="" />
             </div>
             <ul className='nav'>
@@ -68,6 +68,7 @@ const StyledNav = styled.nav`
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        cursor: pointer;
 
         img {
             width: 90px;
