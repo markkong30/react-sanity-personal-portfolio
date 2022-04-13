@@ -92,6 +92,12 @@ const StyledTestimonials = styled.div`
 
   }
 
+	@media (min-width: 2000px) {
+      h2 {
+        padding-bottom: 5rem;
+      }
+  }
+	
 	.app__testimonial-item {
 		width: 80%;
 		min-height: 320px;

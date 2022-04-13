@@ -44,12 +44,18 @@ const StyledAbout = styled.div`
     position: relative;
     align-items: initial;
     padding: 0 5%;
-
+    flex: 1;
+    
     .app__profiles {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 3rem;
         padding: 3rem;
+
+        @media (min-width: 2000px) {
+            gap: 5rem;
+            
+        }
 
         @media (max-width: 1250px) {
             grid-template-columns: repeat(2, minmax(200px, 1fr));
