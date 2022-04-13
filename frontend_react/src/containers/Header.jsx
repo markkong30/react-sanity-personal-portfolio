@@ -96,7 +96,7 @@ const StyledHeader = styled(motion.div)`
         gap: 3rem;
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
         flex-direction: column;
     }
 
@@ -115,7 +115,7 @@ const StyledHeader = styled(motion.div)`
         height: 100%;
         margin-left: 2rem;
 
-        @media (max-width: 1200px) {
+        @media (max-width: 1400px) {
             /* width: 100%; */
             margin-right: 0rem;
             /* justify-content: flex-start; */
@@ -187,13 +187,13 @@ const StyledHeader = styled(motion.div)`
             position: absolute;
             left: 0;
             right: 0;
-            bottom: -5%;
+            bottom: -10%;
             z-index: 0;
             width: 100%;
             height: 90%;
         }
 
-        @media  (max-width: 1200px) {
+        @media  (max-width: 1400px) {
             margin: 2rem 0;
             flex-basis: initial;
 
@@ -293,7 +293,7 @@ const StyledHeader = styled(motion.div)`
                 }
             }
 
-            @media (max-width: 1200px) {
+            @media (max-width: 1400px) {
                 div {
                     margin: 0 !important;
 
@@ -302,7 +302,7 @@ const StyledHeader = styled(motion.div)`
 
         }
 
-            @media  (max-width: 1200px) {
+            @media  (max-width: 1400px) {
                 width: 100%;
                 flex-direction: row;
                 flex-wrap: wrap;

@@ -50,6 +50,15 @@ const StyledAbout = styled.div`
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 3rem;
         padding: 3rem;
+
+        @media (max-width: 1250px) {
+            grid-template-columns: repeat(2, minmax(200px, 1fr));
+        }
+
+        @media (max-width: 700px) {
+            grid-template-columns: repeat(1, minmax(200px, 1fr));
+        }
+
         .app__profile-item {
 
             img {
