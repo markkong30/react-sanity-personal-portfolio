@@ -129,6 +129,9 @@
         transition: all 0.3s ease-in-out;
 
         svg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 15px;
             height: 15px;
             color: var(--gray-color);
