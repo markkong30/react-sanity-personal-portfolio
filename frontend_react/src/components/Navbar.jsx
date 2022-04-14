@@ -32,7 +32,7 @@ const Navbar = () => {
                             <ul className='sm-ul'>
                                 {navItems.map(item => (
                                     <li key={`link-${item}`} className='app__flex p-text'>
-                                        <a href={`/${item}`}>{item}</a>
+                                        <a href={`#${item}`} onClick={() => setToggle(false)}>{item}</a>
                                     </li>
                                 ))}
                             </ul>

@@ -1,15 +1,9 @@
-import About from './About';
-import Footer from './Footer';
-import Header from './Header';
-import Skills from './Skills';
-import Testimonial from './Testimonial';
-import Work from './Work';
+import About from "./About";
+import Header from "./Header";
+import Contact from "./Contact";
+import Skills from "./Skills";
+import Testimonial from "./Testimonial";
+import Work from "./Work";
+import Footer from "./Footer";
 
-export {
-    About,
-    Footer,
-    Header,
-    Skills,
-    Testimonial,
-    Work,
-};
+export { About, Contact, Header, Skills, Testimonial, Work, Footer };
