@@ -19,6 +19,8 @@ import typescript from "../assets/typescript.png";
 import vue from "../assets/vue.png";
 import rails from "../assets/rails.png";
 import ruby from "../assets/ruby.png";
+import sanity from "../assets/sanity.png";
+import firebase from "../assets/firebase.png";
 
 import about01 from "../assets/about01.png";
 import about02 from "../assets/about02.png";
@@ -78,6 +80,8 @@ const images = {
 	ruby,
 	mark,
 	fig2,
+	sanity,
+	firebase,
 };
 
 export default images;
