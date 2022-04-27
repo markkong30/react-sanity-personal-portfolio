@@ -99,7 +99,7 @@ const Work = () => {
                         </div>
 
                         <div className="app__work-content app__flex">
-                            <h4 className="bold-text">{work.title}</h4>
+                            <h4 className="title bold-text">{work.title}</h4>
                             <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
 
                             <div className="app__work-tag app__flex">
@@ -164,22 +164,24 @@ const StyledWork = styled.div`
     }
 
     .app__work-portfolio {
-        /* display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center; */
-
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 3rem;
         padding: 3rem 10%;
         justify-content: center;
 
-        @media (max-width: 500px) {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
+        @media (min-width: 2200px) {
+            gap: 5rem;
+            padding: 5rem 10%;
+            grid-template-columns: repeat(3, 1fr);
         }
+
+        @media (max-width: 1400px) {
+
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+    
 
         .app__work-item {
             display: flex;
@@ -244,22 +246,23 @@ const StyledWork = styled.div`
 
             .app__work-content {
                 padding: 2rem;
-                width: 100%;
+                width: 90%;
                 position: relative;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
-                h4 {
+
+                
+                h4.title {
                     line-height: 1.5;
                     text-align: center;
-
                 }
 
                 p {
-                    text-align: justify;
-
+                    text-align: start;
+                    /* height: 65%; */
                 }
 
                 .app__work-tag {
@@ -295,7 +298,7 @@ const StyledWork = styled.div`
     
     }
 
-    @media (min-width: 2400px) {
+    @media (min-width: 2600px) {
         .p-text {
             font-size: 1.4rem !important;
 
