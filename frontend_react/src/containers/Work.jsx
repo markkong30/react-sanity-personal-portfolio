@@ -177,10 +177,12 @@ const StyledWork = styled.div`
         }
 
         @media (max-width: 1400px) {
-
             grid-template-columns: repeat(1, 1fr);
         }
 
+        @media (max-width: 700px) {
+            padding: 3rem 5%;
+        }
     
 
         .app__work-item {

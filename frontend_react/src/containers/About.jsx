@@ -46,6 +46,10 @@ const StyledAbout = styled.div`
     padding: 0 5%;
     flex: 1;
     
+    @media (max-width: 700px) {
+        padding: 0;
+    }
+
     .app__profiles {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
