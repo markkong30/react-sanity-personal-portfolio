@@ -55,7 +55,7 @@ const Contact = () => {
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:+852 51743298" className="p-text">+852 51743298</a>
+          <a href="tel:+44 07743187767" className="p-text">+44 07743187767</a>
         </div>
       </div>
       {!isFormSubmitted ? (
