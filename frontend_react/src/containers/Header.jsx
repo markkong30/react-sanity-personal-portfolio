@@ -63,7 +63,7 @@ const Header = () => {
                 whileInView={heroBubble.whileInView}
                 className="app__header-stacks secondary"
             >
-                {[images.html, images.rails, images.sanity, images.css].map((circle, index) => (
+                {[images.html, images.rails, images.graphql, images.css].map((circle, index) => (
                     <div className="stack-cmp app__flex" key={`stack-${index}`}>
                         <img src={circle} alt="profile_bg" />
                     </div>

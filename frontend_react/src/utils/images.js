@@ -41,6 +41,7 @@ import spotify from "../assets/spotify.png";
 
 import mark from "../assets/mark.png";
 import fig2 from "../assets/fig2.png";
+import nextjs from "../assets/nextjs.png";
 
 const images = {
 	email,
@@ -82,6 +83,7 @@ const images = {
 	fig2,
 	sanity,
 	firebase,
+	nextjs,
 };
 
 export default images;
