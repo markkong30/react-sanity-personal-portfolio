@@ -58,6 +58,10 @@ const Contact = () => {
           <a href="tel:+44 07743187767" className="p-text">+44 07743187767</a>
         </div>
       </div>
+      <div className="offer-msg">
+        * Sorry, I am currently not opening to offers.
+      </div>
+
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex" ref={form}>
           <div className="app__flex">
@@ -172,6 +176,12 @@ const StyledFooter = styled.div`
     box-shadow: 0 0 25px #f2f7fb;
   }
 
+  .offer-msg {
+    color: #E53935;
+    font-weight: lighter;
+    font-style: italic;
+  }
+
   .app__footer-form {
     width: 60%;
     flex-direction: column;
@@ -229,7 +239,7 @@ const StyledFooter = styled.div`
       }
 
       &.disabled {
-        background-color: #565fad;
+        background-color: #585b7b;
         cursor: not-allowed;
       }
     }
