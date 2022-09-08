@@ -22,7 +22,7 @@ const Skills = () => {
         });
     }, []);
 
-
+    console.log(experiences, skills)
     return (
         <StyledSkills>
             <h2 className="head-text">Skills & Experiences</h2>
@@ -59,6 +59,7 @@ const Skills = () => {
                             <motion.div className='app__skills-exp-works'>
                                 {experience.works?.map((work, i) => (
                                     <React.Fragment key={i}>
+
                                         <motion.div
                                             whileInView={{ opacity: [0, 1] }}
                                             transition={{ duration: 0.2 }}
@@ -67,8 +68,14 @@ const Skills = () => {
                                             data-for={work.name}
 
                                         >
-                                            <h4 className="bold-text">{work.name}</h4>
-                                            <p className="p-text">{work.company}</p>
+                                            <div className="work-img">
+                                                <img src={urlFor(work.imgUrl)} alt={work.name} />
+                                            </div>
+                                            <div className="work-text">
+                                                <h4 className="bold-text">{work.name}</h4>
+                                                <p className="p-text">{work.company}</p>
+                                            </div>
+
                                         </motion.div>
                                         <ReactTooltip
                                             id={work.name}
@@ -221,6 +228,8 @@ const StyledSkills = styled.div`
 
         }
 
+        
+
         .app__skills-exp-item {
             width: 100%;
             display: flex;
@@ -239,26 +248,48 @@ const StyledSkills = styled.div`
 
                 .app__skills-exp-work {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    margin-bottom: 1rem;
-                    cursor: pointer;
+                    justify-content: center;
+                    /* align-items: center; */
+                    gap: 1.5rem;  
 
                     &:not(:nth-child(1)) {
                         margin: 1rem 0;
                     }
 
-                    h4 {
-                        font-weight: 500;
+                    .work-img {
+                        width: 50px;
+                        height: 50px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
                     }
 
-                    p {
-                        font-weight: 400;
-                        color: var(--gray-color);
-                        margin-top: 5px;
+                    .work-text {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        margin-bottom: 1rem;
+                        cursor: pointer;
+
+                        
+
+                        h4 {
+                            font-weight: 500;
+                        }
+
+                        p {
+                            font-weight: 400;
+                            color: var(--gray-color);
+                            margin-top: 5px;
+                        }
                     }
                 }
+
+               
             }
 
             .app__skills-exp-year {
