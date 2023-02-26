@@ -22,7 +22,6 @@ const Skills = () => {
 		});
 	}, []);
 
-	console.log(experiences, skills);
 	return (
 		<StyledSkills>
 			<h2 className="head-text">Skills & Experiences</h2>
@@ -36,7 +35,10 @@ const Skills = () => {
 							className="app__skills-item app__flex"
 							key={skill.name}
 						>
-							<div className="app__flex icon" style={{ backgroundColor: skill.bgColor || '#F2F3F5' }}>
+							<div
+								className="app__flex icon"
+								style={{ backgroundColor: skill.bgColor || '#F2F3F5' }}
+							>
 								<img src={urlFor(skill.icon)} alt={skill.name} />
 							</div>
 							<p className="p-text">{skill.name}</p>
@@ -312,4 +314,8 @@ const StyledSkills = styled.div`
 	}
 `;
 
-export default AppWrap(MotionWrap(Skills, 'app__skills'), 'skills', 'app__whitebg');
+export default AppWrap(
+	MotionWrap(Skills, 'app__skills'),
+	'skills',
+	'app__whitebg'
+);

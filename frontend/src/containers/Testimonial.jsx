@@ -18,7 +18,6 @@ const Testimonial = () => {
 
 		client.fetch(query).then((data) => {
 			setTestimonials(data);
-			console.log(data)
 		});
 
 		client.fetch(brandsQuery).then((data) => {
@@ -36,7 +35,7 @@ const Testimonial = () => {
 
 			{testimonials.length && (
 				<>
-					<div className='app__testimonial-item app__flex'>
+					<div className="app__testimonial-item app__flex">
 						<img src={urlFor(currentTestimonial.imgUrl)} />
 						<div className="app__testimonial-content">
 							<p className="p-text">{currentTestimonial.feedback}</p>
@@ -48,11 +47,29 @@ const Testimonial = () => {
 					</div>
 
 					<div className="app__testimonial-btns app__flex">
-						<div className="app__flex btn" onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
+						<div
+							className="app__flex btn"
+							onClick={() =>
+								handleClick(
+									currentIndex === 0
+										? testimonials.length - 1
+										: currentIndex - 1
+								)
+							}
+						>
 							<HiChevronLeft />
 						</div>
 
-						<div className="app__flex btn" onClick={() => handleClick(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1)}>
+						<div
+							className="app__flex btn"
+							onClick={() =>
+								handleClick(
+									currentIndex === testimonials.length - 1
+										? 0
+										: currentIndex + 1
+								)
+							}
+						>
 							<HiChevronRight />
 						</div>
 					</div>
@@ -69,7 +86,6 @@ const Testimonial = () => {
 					</motion.div>
 				))}
 			</div>
-
 		</StyledTestimonials>
 	);
 };
@@ -87,17 +103,16 @@ const StyledTestimonials = styled.div`
 	}
 
 	h2 {
-      padding-bottom: 3rem;
-			color: var(--secondary-color);
-
-  }
+		padding-bottom: 3rem;
+		color: var(--secondary-color);
+	}
 
 	@media (min-width: 2000px) {
-      h2 {
-        padding-bottom: 5rem;
-      }
-  }
-	
+		h2 {
+			padding-bottom: 5rem;
+		}
+	}
+
 	.app__testimonial-item {
 		width: 80%;
 		min-height: 320px;
@@ -116,7 +131,7 @@ const StyledTestimonials = styled.div`
 		}
 
 		@media screen and (min-width: 2000px) {
-    	min-height: 450px;
+			min-height: 450px;
 
 			img {
 				width: 150px;
@@ -143,7 +158,6 @@ const StyledTestimonials = styled.div`
 		padding: 0 2rem;
 		text-align: left;
 
-		
 		p {
 			font-size: 1.25rem;
 			line-height: 2rem;
@@ -186,7 +200,7 @@ const StyledTestimonials = styled.div`
 			width: 50px;
 			height: 50px;
 			border-radius: 50%;
-			background-color:var(--white-color);
+			background-color: var(--white-color);
 			margin: 1rem;
 			transition: all 0.3s ease-in-out;
 			cursor: pointer;
@@ -208,46 +222,46 @@ const StyledTestimonials = styled.div`
 	}
 
 	.app__testimonial-brands {
-			width: 80%;
-			flex-wrap: wrap;
-			margin-top: 2rem;
+		width: 80%;
+		flex-wrap: wrap;
+		margin-top: 2rem;
 
-			div {
-				width: 150px;
-				margin: 1.5rem;
+		div {
+			width: 150px;
+			margin: 1.5rem;
 
-				img {
-					width: 100%;
-					object-fit: cover;
-					filter: grayscale(1);
-					opacity: 0.8;
-				}
-
-				&:hover {
-					img {
-						filter: grayscale(0);
-						opacity: 1;
-					}
-				}
-
-				@media screen and (min-width: 2000px) {
-					width: 210px;
-					margin: 2rem;
-				}
-
-				@media screen and (max-width: 450px) {
-					width: 120px;
-					margin: 1rem;
-				}
-			}
-				@media screen and (max-width: 800px) {
+			img {
 				width: 100%;
+				object-fit: cover;
+				filter: grayscale(1);
+				opacity: 0.8;
 			}
+
+			&:hover {
+				img {
+					filter: grayscale(0);
+					opacity: 1;
+				}
+			}
+
+			@media screen and (min-width: 2000px) {
+				width: 210px;
+				margin: 2rem;
+			}
+
+			@media screen and (max-width: 450px) {
+				width: 120px;
+				margin: 1rem;
+			}
+		}
+		@media screen and (max-width: 800px) {
+			width: 100%;
+		}
 	}
-`
+`;
 
 export default AppWrap(
 	MotionWrap(Testimonial, 'app__testimonial'),
 	'testimonial',
-	'app__primarybg',
+	'app__primarybg'
 );
